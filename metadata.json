@@ -1,0 +1,6 @@
+{
+  "name": "Crypto Liquidation Calculator",
+  "description": "An advanced liquidation calculator for cryptocurrency futures trading. Estimate your liquidation price on Bitget with real-time price data from CoinGecko. Supports both long and short positions, leverage adjustments, and calculation of additional margin needed to reach a desired liquidation price.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
