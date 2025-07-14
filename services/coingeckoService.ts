@@ -6,7 +6,7 @@ const API_BASE_URL = 'https://api.coingecko.com/api/v3';
 export const searchCoins = async (query: string): Promise<Coin[]> => {
     if (!query) return [];
     try {
-        const response = await fetch(`${API_BASE_URL}/search?query=${encodeURIComponent(query)}`);
+        const response = await fetch(`${API_BASE_URL}/search?query=${encodeURIComponent(query)}`, { cache: 'no-cache' });
         if (!response.ok) {
             console.error('CoinGecko API search error:', response.statusText);
             throw new Error('Failed to search for assets.');
@@ -22,7 +22,7 @@ export const searchCoins = async (query: string): Promise<Coin[]> => {
 export const fetchPrice = async (coinId: string): Promise<number | null> => {
     if (!coinId) return null;
      try {
-        const response = await fetch(`${API_BASE_URL}/simple/price?ids=${coinId}&vs_currencies=usd`);
+        const response = await fetch(`${API_BASE_URL}/simple/price?ids=${coinId}&vs_currencies=usd`, { cache: 'no-cache' });
         if (!response.ok) {
             console.error('CoinGecko API price fetch error:', response.statusText);
             throw new Error('Failed to fetch price data.');
